@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:myflat/utils/routes.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -40,12 +41,13 @@ class LoginPage extends StatelessWidget {
                       hintText: "Enter Password", labelText: "Password"),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 40,
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      print("Hi Prodip");
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
+                    style: TextButton.styleFrom(minimumSize: Size(150, 40)),
                     child: Text("login"))
               ],
             ),
