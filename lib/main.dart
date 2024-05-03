@@ -1,7 +1,11 @@
+// ignore_for_file: prefer_const_constructors
+
 import "package:flutter/material.dart";
+import "package:myflat/pages/home_page.dart";
+import "package:myflat/pages/login_page.dart";
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,13 +14,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Material(
-        child: Center(
-          child: Container(
-            child: Text("Welcome to My First Flutter App"),
-          ),
-        ),
-      ),
+      themeMode: ThemeMode.light,
+      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      darkTheme:
+          ThemeData(brightness: Brightness.dark, primarySwatch: Colors.red),
+      routes: {
+        "/": (context) => LoginPage(),
+        "/home": (context) => HomePage(),
+        "/login": (context) => LoginPage()
+      },
     );
   }
 }
