@@ -12,6 +12,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String name = "";
+  String password = "";
   bool changeButton = false;
 
   final _formKey = GlobalKey<FormState>();
@@ -79,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                         return null;
                       },
                       onChanged: (value) {
-                        name = value;
+                        password = value;
                         setState(() {});
                       },
                     ),
